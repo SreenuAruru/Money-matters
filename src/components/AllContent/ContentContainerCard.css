@@ -1,0 +1,12 @@
+.content-container {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px 40px 40px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  background-color: #eceff2;
+}
+.content-container::-webkit-scrollbar {
+  display: none;
+}

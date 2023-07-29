@@ -1,0 +1,10 @@
+.menu-bar-container {
+  width: 220px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  border-right: 1px solid #e2e2e2;
+  background-color: #fff;
+}

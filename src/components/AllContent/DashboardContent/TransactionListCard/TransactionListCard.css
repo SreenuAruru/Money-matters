@@ -1,0 +1,7 @@
+.trasaction-list-container {
+  width: calc(100% - 40px);
+  border-radius: 15px;
+  padding: 0px;
+  background-color: #ffffff;
+  padding: 15px 20px 30px 20px;
+}

@@ -1,0 +1,55 @@
+.menu-container {
+  /* border: 1px solid red; */
+  margin-top: 20px;
+}
+.menu-icon-container {
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  cursor: pointer;
+}
+.side-menu-bar {
+  width: 5px;
+  height: 100%;
+  background-color: #2d60ff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.menu-text {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  color: #505887;
+  line-height: normal;
+  margin: 0px 0px 0px 25px;
+}
+.menu-home-icon {
+  width: 28px;
+  height: 28px;
+  color: #505887;
+  margin-left: 20px;
+}
+.menu-transfer-icon {
+  width: 23px;
+  height: 23px;
+  color: #505887;
+  margin-left: 20px;
+}
+
+.menu-profile-icon {
+  width: 20px;
+  height: 23px;
+  color: #505887;
+  margin-left: 20px;
+}
+/* change this two styles based on condition */
+
+.icon-margin {
+  margin-left: 6px;
+}
+.active-text {
+  color: #2d60ff;
+}

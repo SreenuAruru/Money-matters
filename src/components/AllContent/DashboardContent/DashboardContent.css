@@ -1,0 +1,12 @@
+.credit-debit-amount-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.last-transaction-text,
+.credit-debit-text {
+  color: #333b69;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 15px;
+}

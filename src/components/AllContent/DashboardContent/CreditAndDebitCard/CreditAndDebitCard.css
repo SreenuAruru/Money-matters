@@ -1,0 +1,8 @@
+.credit-debit-container {
+  width: 475px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 15px;
+  background-color: #ffffff;
+}

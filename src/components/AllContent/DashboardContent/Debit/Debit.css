@@ -1,0 +1,19 @@
+.debit-amount-container {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.debit-amount-heading {
+  color: #fe5c73;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0px;
+}
+.debit-text {
+  color: #718ebf;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px;
+}
+.debit-image {
+  width: 160px;
+}

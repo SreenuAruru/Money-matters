@@ -1,0 +1,19 @@
+.credit-amount-container {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.credit-amount-heading {
+  color: #16dbaa;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0px;
+}
+.credit-text {
+  color: #718ebf;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px;
+}
+.credit-image {
+  width: 160px;
+}

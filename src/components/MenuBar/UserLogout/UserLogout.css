@@ -1,0 +1,35 @@
+.user-logout-container {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #eaecf0;
+  padding: 15px 10px 15px 15px;
+  align-items: center;
+}
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.logout-name-para-container {
+  margin-left: 10px;
+  width: calc(100% - 40px);
+}
+.logout-name-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-name {
+  margin: 0px;
+  font-size: 14px;
+  color: #505887;
+}
+.email-id-text {
+  margin: 0px;
+  font-size: 12px;
+  color: #718ebf;
+}
+.profile-logout-icon {
+  color: #718ebf;
+}
