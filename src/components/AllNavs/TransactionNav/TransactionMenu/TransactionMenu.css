@@ -1,0 +1,18 @@
+.debit-credit-menu-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px dotted blue; */
+}
+.debit-credit-list-item {
+  list-style-type: none;
+  margin-right: 20px;
+}
+.debit-credit-menu {
+  text-decoration: dotted;
+  color: #718ebf;
+  font-size: 16px;
+  font-weight: 500;
+}

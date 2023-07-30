@@ -1,5 +1,4 @@
 import ContentContainerCard from "../ContentContainerCard";
-import TransactionListCard from "./TransactionListCard/TransactionListCard";
 import TransactionOverviewCard from "./TransactionOverviewCard/TransactionOverviewCard";
 import LastThreeTransactionItem from "./LastThreeTransactionItem/LastThreeTransactionItem";
 
@@ -16,9 +15,7 @@ function DashboardContent() {
         <Debit />
       </div>
       <h2 className="last-transaction-text">Last Transactions</h2>
-      <TransactionListCard>
-        <LastThreeTransactionItem />
-      </TransactionListCard>
+      <LastThreeTransactionItem />
       <h2 className="credit-debit-text">Debit & Credit Overview</h2>
       <TransactionOverviewCard />
     </ContentContainerCard>

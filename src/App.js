@@ -1,9 +1,11 @@
 import DashBoard from "./components/DashBoard/DashBoard";
+import Transactions from "./components/Transactions/Transactions";
+import Profile from "./components/Profile/Profile";
 
 import "./App.css";
 
-function App() {
+const App = () => {
   return <DashBoard />;
-}
+};
 
 export default App;

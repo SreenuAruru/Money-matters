@@ -1,73 +1,81 @@
-.dash-transaction-table {
+.transaction-table-row {
+  text-align: start;
+  line-height: 40px;
+
+  color: #343c6a;
+  font-size: 16px;
+  font-weight: 500;
+}
+.transaction-table {
   border-radius: 15px;
   padding: 5px 25px 5px 25px;
   background-color: #ffffff;
 }
-.dash-transaction-table-info {
+.transaction-table-info {
   line-height: 10px;
-  border-bottom: 1px solid #e2e2e2;
+  border-top: 1px solid #e2e2e2;
 }
-.dash-arrow-category-name-container {
+.arrow-category-name-container {
   width: 45%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.dash-arrow-name-container {
+.arrow-name-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.dash-up-down-status-arrow {
+.up-down-status-arrow {
   width: 30px;
   height: 30px;
   flex-shrink: 0;
   color: #16dbaa;
 }
-.dash-spend-money-name {
+.spend-money-name {
   color: #505887;
   font-size: 16px;
   font-weight: 500;
   margin: 0px 0px 0px 10px;
 }
-.dash-category-name {
+.category-name {
   color: #718ebf;
   font-size: 16px;
   font-weight: 400;
 }
-.dash-date-edit-delete-container {
+.date-edit-delete-container {
   width: 45%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.dash-date-text {
+.date-text {
   color: #718ebf;
   font-size: 16px;
   font-weight: 400;
 }
-.dash-amount-text {
+.amount-text {
   color: #16dbaa;
   text-align: start;
   font-size: 16px;
   font-weight: 500;
 }
-.dash-edit-delete-buttons-container {
+.edit-delete-buttons-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
-.dash-delte-icon {
+.delte-icon {
   width: 21px;
   height: 22px;
   flex-shrink: 0;
   color: #fe5c73;
   cursor: pointer;
 }
-.dash-edit-icon {
+.edit-icon {
   width: 21px;
   height: 22px;
   flex-shrink: 0;

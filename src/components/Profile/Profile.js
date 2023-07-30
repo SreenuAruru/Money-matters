@@ -1,20 +1,21 @@
 import { useState } from "react";
 
-import DashboardNav from "../AllNavs/DashboardNav/DashboardNav.js";
+import Popup from "../Popups/Popup";
+
+import ProfileNav from "../AllNavs/ProfileNav/ProfileNav";
+import ProfileContent from "../AllContent/ProfileContent/ProfileContent";
 import MenuBar from "../MenuBar/MenuBar";
-import DashboardContent from "../AllContent/DashboardContent/DashboardContent.js";
-import Popup from "../Popups/Popup.js";
 
-import "./DashBoard.css";
+import "./Profile.css";
 
-function DashBoard() {
+function Profile() {
   const [popToggle, setPopToggle] = useState();
 
   const popupHandler = () => {
     setPopToggle(null);
   };
 
-  const addTransactionbtnValue = () => {
+  const addTransactionBtnHandlerV = () => {
     setPopToggle(true);
   };
 
@@ -24,12 +25,12 @@ function DashBoard() {
       <div className="home-container">
         <MenuBar />
         <div className="menubar-content-container">
-          <DashboardNav addTransactionbtn={addTransactionbtnValue} />
-          <DashboardContent />
+          <ProfileNav addTransactionBtnHandler={addTransactionBtnHandlerV} />
+          <ProfileContent />
         </div>
       </div>
     </>
   );
 }
 
-export default DashBoard;
+export default Profile;

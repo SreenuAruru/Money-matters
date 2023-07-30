@@ -1,0 +1,12 @@
+.transaction-heading-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transaction-nav-heading {
+  font-size: 24px;
+  color: #343c6a;
+}

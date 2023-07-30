@@ -1,0 +1,25 @@
+.warning-popup-cancel-heading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.warning-popup-heading {
+  color: #333b69;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  margin: 0px;
+}
+.warning-popup-cross-button {
+  background-color: transparent;
+  border: none;
+}
+.warning-popup-cross-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #718ebf;
+  cursor: pointer;
+}

@@ -31,5 +31,10 @@
   color: #718ebf;
 }
 .profile-logout-icon {
+  cursor: pointer;
   color: #718ebf;
+}
+.logout-buuton {
+  background-color: transparent;
+  border: none;
 }

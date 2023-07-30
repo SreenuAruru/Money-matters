@@ -3,11 +3,19 @@ import NavCard from "../NavCard";
 
 import "./DashboardNav.css";
 
-function DashboardNav() {
+function DashboardNav(props) {
+  const { addTransactionbtn } = props;
+
+  const addTransactionb = () => {
+    addTransactionbtn();
+  };
+
   return (
     <NavCard>
-      <h1 className="nav-heading">Accounts</h1>
-      <AddTransactionButton />
+      <div className="dash-heading-container">
+        <h1 className="nav-heading">Accounts</h1>
+        <AddTransactionButton addTransaction={addTransactionb} />
+      </div>
     </NavCard>
   );
 }

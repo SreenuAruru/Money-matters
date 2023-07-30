@@ -4,7 +4,13 @@
   font-size: 24px;
   color: #343c6a;
 }
-
+.dash-heading-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 /* nav button code */
 
 .transaction-button {
