@@ -1,24 +1,16 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-
 import { RxCross2 } from "react-icons/rx";
-import { FiLogOut } from "react-icons/fi";
+import { PiWarningLight } from "react-icons/pi";
 
 import PopupCard from "../PopupCard/PopupCard";
-import "./WarningPopup.css";
-import Cookies from "js-cookie";
+import "./WarningDeletePopup.css";
 
-function WarningPopup(props) {
-  const popupLogoutHandler = () => {
-    Cookies.remove("user_id");
-    window.location.reload();
-  };
-
+function WarningDeletePopup(props) {
   return (
     <PopupCard>
       <div className="waring-heading-para-container">
         <div className="warning-logunt-first-container">
           <div className="warning-logunt-second-container">
-            <FiLogOut className="lagout-warning-icon" />
+            <PiWarningLight className="lagout-warning-icon" />
           </div>
         </div>
         <div className="warning-button-heading-container">
@@ -27,29 +19,23 @@ function WarningPopup(props) {
               Are you sure you want to Logout
             </h2>
             <button
-              onClick={props.onPopupWarningHandler}
+              onClick={props.onPopupDeleteWarningHandler}
               className="warning-popup-cross-button"
             >
               <RxCross2 className="warning-popup-cross-icon" />
             </button>
           </div>
           <p className="warning-para">
-            Lorem Ipusm dolor sit amet, consectetur adipiscing eli, sed
+            This transaction will be deleted immediately. You can't undo this
+            section
           </p>
           <div className="warning-button-container">
-            <Link to="/login">
-              <button
-                className="warning-delete-button"
-                onClick={popupLogoutHandler}
-              >
-                Yes, Logout
-              </button>
-            </Link>
+            <button className="warning-delete-button">Yes, Delete</button>
             <button
               className="warning-leave-button"
-              onClick={props.onPopupWarningHandler}
+              onClick={props.onPopupDeleteWarningHandler}
             >
-              Cancel
+              No, Leave it
             </button>
           </div>
         </div>
@@ -58,4 +44,4 @@ function WarningPopup(props) {
   );
 }
 
-export default WarningPopup;
+export default WarningDeletePopup;

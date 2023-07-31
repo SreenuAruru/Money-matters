@@ -51,11 +51,11 @@
   align-items: center;
   justify-content: space-between;
 }
-.date-text {
+/* .date-text {
   color: #718ebf;
   font-size: 16px;
   font-weight: 400;
-}
+} */
 .amount-text {
   color: #16dbaa;
   text-align: start;
@@ -82,4 +82,8 @@
   color: #2d60ff;
   cursor: pointer;
   margin-right: 15px;
+}
+.delete-edit-button {
+  background-color: transparent;
+  border: none;
 }

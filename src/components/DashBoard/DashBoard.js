@@ -1,3 +1,5 @@
+import { Redirect } from "react-router-dom";
+
 import { useState } from "react";
 
 import DashboardNav from "../AllNavs/DashboardNav/DashboardNav.js";
@@ -6,6 +8,7 @@ import DashboardContent from "../AllContent/DashboardContent/DashboardContent.js
 import Popup from "../Popups/Popup.js";
 
 import "./DashBoard.css";
+import Cookies from "js-cookie";
 
 function DashBoard() {
   const [popToggle, setPopToggle] = useState();
@@ -17,6 +20,12 @@ function DashBoard() {
   const addTransactionbtnValue = () => {
     setPopToggle(true);
   };
+
+  // this is controling route
+  const userId = Cookies.get("user_id");
+  if (userId === undefined) {
+    // return <Redirect to="/login" />;
+  }
 
   return (
     <>

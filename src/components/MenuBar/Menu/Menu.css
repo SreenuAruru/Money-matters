@@ -1,6 +1,7 @@
 .menu-container {
   /* border: 1px solid red; */
   margin-top: 20px;
+  padding: 0px;
 }
 .menu-icon-container {
   height: 50px;
@@ -52,4 +53,7 @@
 }
 .active-text {
   color: #2d60ff;
+}
+.link-style {
+  text-decoration: none;
 }
