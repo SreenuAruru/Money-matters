@@ -68,7 +68,6 @@ class TranscactionContent extends Component {
         type: eachItem.type,
         userId: eachItem.user_id,
       }));
-
       this.setState({ allTransactionDataValue: allTransactionData });
     } catch (error) {
       console.error(error);
@@ -76,19 +75,29 @@ class TranscactionContent extends Component {
   };
 
   render() {
-    // const currentDate = new Date();
-    // const dayValue = currentDate.getDate();
-    // const monthValue = currentDate.toLocaleString("default", {
-    //   month: "short",
-    // });
-    // const timeOptions = { hour: "2-digit", minute: "2-digit", hour12: true };
-    // const formattedTime = currentDate.toLocaleString("en-US", timeOptions);
-
+    const { userClickTypes } = this.props;
     const transactionTableRowClass = "transaction-table-row";
     const transactionInfoTableClass = "transaction-table-info";
+    const userId = Cookies.get("user_id");
 
     const { deletePopu, allTransactionDataValue } = this.state;
 
+    let transactionsData = allTransactionDataValue;
+
+    if (userClickTypes === "All Transaction") {
+      transactionsData = allTransactionDataValue;
+    } else if (userClickTypes === "Debit") {
+      transactionsData = allTransactionDataValue.filter(
+        (eachItem) => eachItem.type === "debit"
+      );
+    } else if (userClickTypes === "Credit") {
+      transactionsData = allTransactionDataValue.filter(
+        (eachItem) => eachItem.type === "credit"
+      );
+    }
+
+    const userImage =
+      "https://th.bing.com/th/id/R.c3e7fea834548c6b7d7bf4ae3d371f72?rik=FCcvEoGVBD14BQ&riu=http%3a%2f%2fwww.logidriveindia.com%2fwp-content%2fuploads%2f2020%2f06%2f130-1300253_female-user-icon-png-download-user-image-color.png&ehk=xVmpqWHHZJuNw5ERCVVv3%2bJ0PP6woCZmNd1tme3ZZQc%3d&risl=&pid=ImgRaw&r=0";
     return (
       <>
         {deletePopu && (
@@ -106,11 +115,22 @@ class TranscactionContent extends Component {
               </tr>
             </thead>
             <tbody>
-              {allTransactionDataValue.map((eachtTransaction) => (
+              {transactionsData.map((eachtTransaction) => (
                 <tr key={eachtTransaction.id} className="table-row-transaction">
                   <td className={transactionInfoTableClass}>
                     <div className="arrow-name-container">
-                      <CgArrowUpO className="up-down-status-arrow" />
+                      {eachtTransaction.type === "credit" ? (
+                        <CgArrowUpO className="up-status-arrow" />
+                      ) : (
+                        <CgArrowDownO className="down-status-arrow" />
+                      )}
+                      {userId === "3" && (
+                        <img
+                          src={userImage}
+                          className="admin-images"
+                          alt="admin-image"
+                        />
+                      )}
                       <h4 className="spend-money-name">
                         {eachtTransaction.transactionName}
                       </h4>
@@ -123,7 +143,15 @@ class TranscactionContent extends Component {
                     {<Date eachtTransactionDate={eachtTransaction.date} />}
                   </td>
                   <td className={transactionInfoTableClass}>
-                    <p className="amount-text">{eachtTransaction.amount}</p>
+                    <p
+                      className={`amount-text ${
+                        eachtTransaction.type === "debit"
+                          ? "amount-text-active"
+                          : ""
+                      }`}
+                    >
+                      {eachtTransaction.amount}
+                    </p>
                   </td>
                   <td className={transactionInfoTableClass}>
                     <button className="delete-edit-button">

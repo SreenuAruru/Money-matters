@@ -13,13 +13,13 @@ import {
 import "./TransactionOverviewCard.css";
 
 const data = [
-  { day: "Sat", debit: 250, credit: 220 },
-  { day: "Sun", debit: 180, credit: 280 },
+  { day: "Sat", debit: "", credit: 220 },
+  { day: "Sun", debit: 180, credit: 180 },
   { day: "Mon", debit: 300, credit: 400 },
-  { day: "Tue", debit: 150, credit: 250 },
-  { day: "Wed", debit: 200, credit: 400 },
+  { day: "Tue", debit: 203, credit: 250 },
+  { day: "Wed", debit: 200, credit: 20 },
   { day: "Thu", debit: 350, credit: 300 },
-  { day: "Fri", debit: 400, credit: 350 },
+  { day: "Fri", debit: 160, credit: 350 },
 ];
 
 const RoundedBars = (props) => {
@@ -40,7 +40,9 @@ const RoundedBars = (props) => {
   );
 };
 
-function TransactionOverviewCard() {
+function TransactionOverviewCard(props) {
+  const { last7DayTransactionCreditDebitValue } = props;
+
   return (
     <div className="transaction-overiew-container">
       <div className="debit-credit-amount-status-container">

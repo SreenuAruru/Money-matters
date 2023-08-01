@@ -70,8 +70,6 @@ function Login() {
       {showSubmitError && (
         <div className="error-container">Not A Authenticate User</div>
       )}
-      <p>admin : admin@gmail.com - Admin@123</p>
-      <p>non-admin : rahul@gmail.com - rahul@123</p>
       <div className="login-container">
         <h1 className="login-heading">Login Form</h1>
         <form className="login-form-container" onSubmit={loginHandleSubmit}>

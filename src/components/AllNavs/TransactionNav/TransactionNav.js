@@ -5,9 +5,13 @@ import TransactionMenu from "./TransactionMenu/TransactionMenu";
 import "./TransactionNav.css";
 
 function TransactionNav(props) {
-  const { addTransactionbtnHandler } = props;
+  const { addTransactionbtnHandler, userClickByTransactions } = props;
   const addTransactionbtn = () => {
     addTransactionbtnHandler();
+  };
+
+  const hadndlingUserClick = (event) => {
+    userClickByTransactions(event);
   };
 
   return (
@@ -17,7 +21,7 @@ function TransactionNav(props) {
           <h1 className="transaction-nav-heading">Transactions</h1>
           <AddTransactionButton addTransaction={addTransactionbtn} />
         </div>
-        <TransactionMenu />
+        <TransactionMenu hadndlingUserClicks={hadndlingUserClick} />
       </NavCard>
     </>
   );

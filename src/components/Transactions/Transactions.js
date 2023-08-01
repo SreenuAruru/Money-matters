@@ -10,6 +10,7 @@ import "./Transactions.css";
 
 function Transactions() {
   const [popUpToggle, setPopUpToggle] = useState();
+  const [userClickType, setUserClickType] = useState("All Transaction");
 
   const popupHandler = () => {
     setPopUpToggle(null);
@@ -19,6 +20,11 @@ function Transactions() {
     setPopUpToggle(true);
   };
 
+  const userClickByTransaction = (event) => {
+    const userClickTransaction = event.target.innerText;
+    setUserClickType(userClickTransaction);
+  };
+
   return (
     <>
       {popUpToggle && <Popup onPopupHandler={popupHandler} />}
@@ -26,9 +32,10 @@ function Transactions() {
         <MenuBar />
         <div className="menubar-content-container">
           <TransactionNav
+            userClickByTransactions={userClickByTransaction}
             addTransactionbtnHandler={addTransactionbtnHandlerV}
           />
-          <TranscactionContent />
+          <TranscactionContent userClickTypes={userClickType} />
         </div>
       </div>
     </>

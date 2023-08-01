@@ -27,6 +27,9 @@
   line-height: normal;
   margin: 0px 0px 0px 25px;
 }
+.menu-text:hover {
+  color: #2d60ff;
+}
 .menu-home-icon {
   width: 28px;
   height: 28px;
@@ -45,6 +48,11 @@
   height: 23px;
   color: #505887;
   margin-left: 20px;
+}
+.menu-profile-icon:hover,
+.menu-home-icon:hover,
+.menu-transfer-icon:hover {
+  color: #2d60ff;
 }
 /* change this two styles based on condition */
 

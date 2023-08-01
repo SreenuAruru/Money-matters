@@ -1,17 +1,36 @@
+import { useState } from "react";
 import "./TransactionMenu.css";
 
-function TransactionMenu() {
+function TransactionMenu(props) {
+  const [syleForTransaction, setSyleForTransaction] =
+    useState("All Transaction");
+
+  const { hadndlingUserClicks } = props;
   const menuItems = [
-    { title: "All Transaction", link: "/transaction/transactioName" },
-    { title: "Debit", link: "/transaction/debit" },
-    { title: "Credit", link: "/transaction/credit" },
+    { title: "All Transaction" },
+    { title: "Debit" },
+    { title: "Credit" },
   ];
+
+  const handlingTransactionMenu = (event) => {
+    const userClicks = event.target.innerText;
+    hadndlingUserClicks(event);
+    setSyleForTransaction(userClicks);
+  };
 
   return (
     <ul className="debit-credit-menu-container">
-      {menuItems.map((item, index) => (
-        <li key={index} className="debit-credit-list-item">
-          <a href={item.link} className="debit-credit-menu">
+      {menuItems.map((item) => (
+        <li
+          key={item.title}
+          className="debit-credit-list-item"
+          onClick={handlingTransactionMenu}
+        >
+          <a
+            className={`debit-credit-menu ${
+              syleForTransaction === item.title ? "selectedTrans" : ""
+            }`}
+          >
             {item.title}
           </a>
         </li>

@@ -27,11 +27,20 @@
   flex-direction: row;
   align-items: center;
 }
-.up-down-status-arrow {
+.up-status-arrow {
   width: 30px;
   height: 30px;
   flex-shrink: 0;
   color: #16dbaa;
+}
+.down-status-arrow {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #fe5c73;
+}
+.amount-text-active {
+  color: #fe5c73;
 }
 .spend-money-name {
   color: #505887;
@@ -86,4 +95,10 @@
 .delete-edit-button {
   background-color: transparent;
   border: none;
+}
+.admin-images {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 10px;
 }

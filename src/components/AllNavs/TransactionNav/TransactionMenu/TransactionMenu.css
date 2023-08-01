@@ -15,4 +15,9 @@
   color: #718ebf;
   font-size: 16px;
   font-weight: 500;
+  cursor: pointer;
+}
+.selectedTrans {
+  border-bottom: 2px solid #2d60ff;
+  border-radius: 2px;
 }

@@ -5,7 +5,7 @@ import PopupCard from "./PopupCard/PopupCard";
 
 import "./Popup.css";
 
-const Popup = (props) => {
+const editPopupCard = (props) => {
   const { transactionHandling } = props;
   const [userTransactioFormDeatils, setUserTransactioFormDeatils] = useState({
     name: "",
@@ -33,7 +33,10 @@ const Popup = (props) => {
       <PopupCard>
         <div className="popup-cancel-heading-container">
           <h2 className="popup-heading">Add Transaction</h2>
-          <button onClick={props.onPopupHandler} className="popup-cross-button">
+          <button
+            onClick={props.onEditPopupHandler}
+            className="popup-cross-button"
+          >
             <RxCross2 className="popup-cross-icon" />
           </button>
         </div>
@@ -119,4 +122,4 @@ const Popup = (props) => {
   );
 };
 
-export default Popup;
+export default editPopupCard;
