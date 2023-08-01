@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Money-matters/static/css/main.d8e66e05.css",
+    "main.js": "/Money-matters/static/js/main.4e9e49b5.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Money-matters/static/js/787.28cb0dcd.chunk.js",
+    "static/media/profile-pic.png": "/Money-matters/static/media/profile-pic.e98702ae7c6f571f3f34.png",
+    "static/media/credit.png": "/Money-matters/static/media/credit.4b52e844a5339483d9b8.png",
+    "static/media/debit.png": "/Money-matters/static/media/debit.ebe2032455bda4f9ade2.png",
+    "index.html": "/Money-matters/index.html",
+    "main.d8e66e05.css.map": "/Money-matters/static/css/main.d8e66e05.css.map",
+    "main.4e9e49b5.js.map": "/Money-matters/static/js/main.4e9e49b5.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Money-matters/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8e66e05.css",
+    "static/js/main.4e9e49b5.js"
+  ]
+}
