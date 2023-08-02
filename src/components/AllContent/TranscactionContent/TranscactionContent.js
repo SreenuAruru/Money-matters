@@ -8,6 +8,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import ContentContainerCard from "../ContentContainerCard";
 import WarningDeletePopup from "../../Popups/WarningDeletePopup/WarningDeletePopup";
 import Date from "./Date/Date";
+import UpdatePopup from "../../Popups/UpdatePopup/UpdatePopup";
 
 import "./TranscactionContent.css";
 
@@ -15,6 +16,9 @@ class TranscactionContent extends Component {
   state = {
     deletePopu: undefined,
     allTransactionDataValue: [],
+    deleteTrasactionId: "",
+    popUpdateToggle: undefined,
+    updateIdValue: "",
   };
 
   popupHandler = () => {
@@ -22,9 +26,21 @@ class TranscactionContent extends Component {
       deletePopu: null,
     });
   };
+  updatePopupHandling = () => {
+    this.setState({ popUpdateToggle: null });
+  };
 
-  transactionDeleteHandler = () => {
+  updatePopuHandlingValue = (event) => {
+    const updateId = event.currentTarget.value;
+    this.setState({ updateIdValue: updateId });
+    this.setState({ popUpdateToggle: true });
+    console.log(updateId);
+  };
+
+  transactionDeleteHandler = (event) => {
     this.setState({ deletePopu: true });
+    const deleteId = event.currentTarget.value;
+    this.setState({ deleteTrasactionId: deleteId });
   };
 
   componentDidMount() {
@@ -76,6 +92,7 @@ class TranscactionContent extends Component {
 
   render() {
     const { userClickTypes } = this.props;
+    const { deleteTrasactionId, popUpdateToggle, updateIdValue } = this.state;
     const transactionTableRowClass = "transaction-table-row";
     const transactionInfoTableClass = "transaction-table-info";
     const userId = Cookies.get("user_id");
@@ -101,7 +118,16 @@ class TranscactionContent extends Component {
     return (
       <>
         {deletePopu && (
-          <WarningDeletePopup onPopupDeleteWarningHandler={this.popupHandler} />
+          <WarningDeletePopup
+            deleteTrasactionId={deleteTrasactionId}
+            onPopupDeleteWarningHandler={this.popupHandler}
+          />
+        )}
+        {popUpdateToggle && (
+          <UpdatePopup
+            updateIdValue={updateIdValue}
+            onUpdatePopupHandler={this.updatePopupHandling}
+          />
         )}
         <ContentContainerCard>
           <table className="transaction-table">
@@ -154,12 +180,17 @@ class TranscactionContent extends Component {
                     </p>
                   </td>
                   <td className={transactionInfoTableClass}>
-                    <button className="delete-edit-button">
+                    <button
+                      className="delete-edit-button"
+                      onClick={this.updatePopuHandlingValue}
+                      value={eachtTransaction.id}
+                    >
                       <MdOutlineModeEditOutline className="edit-icon" />
                     </button>
                     <button
                       className="delete-edit-button"
                       onClick={this.transactionDeleteHandler}
+                      value={eachtTransaction.id}
                     >
                       <RiDeleteBinLine className="delte-icon" />
                     </button>

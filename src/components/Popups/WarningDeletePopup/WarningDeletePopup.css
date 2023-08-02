@@ -82,3 +82,12 @@
   width: 20px;
   height: 20px;
 }
+/* this is custom toast */
+.Toastify__toast {
+  background-color: #16dbaa;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  transition: transform 0.3s ease-in-out;
+}

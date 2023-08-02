@@ -6,17 +6,27 @@ import DashboardNav from "../AllNavs/DashboardNav/DashboardNav.js";
 import MenuBar from "../MenuBar/MenuBar";
 import DashboardContent from "../AllContent/DashboardContent/DashboardContent.js";
 import Popup from "../Popups/Popup.js";
+import UpdatePopup from "../Popups/UpdatePopup/UpdatePopup.js";
 
 import "./DashBoard.css";
 import Cookies from "js-cookie";
 
 function DashBoard() {
   const [popToggle, setPopToggle] = useState();
+  const [popUpdateToggle, setUpdatePopToggle] = useState();
+  const [updateIdValue, setUpdateIdValue] = useState("");
 
   const popupHandler = () => {
     setPopToggle(null);
   };
+  const updatePopupHandling = () => {
+    setUpdatePopToggle(null);
+  };
 
+  const updatePopuHandlingValue = (updateId) => {
+    setUpdatePopToggle(true);
+    setUpdateIdValue(updateId);
+  };
   const addTransactionbtnValue = () => {
     setPopToggle(true);
   };
@@ -30,11 +40,17 @@ function DashBoard() {
   return (
     <>
       {popToggle && <Popup onPopupHandler={popupHandler} />}
+      {popUpdateToggle && (
+        <UpdatePopup
+          updateIdValue={updateIdValue}
+          onUpdatePopupHandler={updatePopupHandling}
+        />
+      )}
       <div className="home-container">
         <MenuBar />
         <div className="menubar-content-container">
           <DashboardNav addTransactionbtn={addTransactionbtnValue} />
-          <DashboardContent />
+          <DashboardContent updatePopuHandlingValue={updatePopuHandlingValue} />
         </div>
       </div>
     </>

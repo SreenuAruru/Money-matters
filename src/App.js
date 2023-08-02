@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route, Protect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Login from "./components/Login/Login";
 import DashBoard from "./components/DashBoard/DashBoard";

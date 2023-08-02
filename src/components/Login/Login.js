@@ -6,15 +6,19 @@ import { useState } from "react";
 
 import { AiOutlineMail, AiOutlineLock } from "react-icons/ai";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./Login.css";
 
-function Login() {
+function Login(props) {
   const [loginFormInputData, setLoginFormInputData] = useState({
     email: "",
     password: "",
   });
 
   const [showSubmitError, setShowSubmitError] = useState(false);
+  const { history } = props;
 
   function loginHandleChange(event) {
     const { name, value } = event.target;
@@ -26,6 +30,7 @@ function Login() {
       expires: 30,
       path: "/",
     });
+    history.replace("/");
     setShowSubmitError(false);
   };
 
@@ -57,6 +62,7 @@ function Login() {
       window.location.reload();
     } catch (error) {
       onSubmitFailure(error);
+      toast("Not A Authenticate User");
     }
   };
 

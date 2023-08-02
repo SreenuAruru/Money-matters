@@ -3,6 +3,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { RxCross2 } from "react-icons/rx";
 import { FiLogOut } from "react-icons/fi";
 
+import "react-toastify/dist/ReactToastify.css";
+
 import PopupCard from "../PopupCard/PopupCard";
 import "./WarningPopup.css";
 import Cookies from "js-cookie";

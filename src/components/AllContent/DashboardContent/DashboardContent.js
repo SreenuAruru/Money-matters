@@ -27,6 +27,11 @@ class DashboardContent extends Component {
     this.setState({ deletePopu: true });
   };
 
+  updatePopuHandling = (updateId) => {
+    const { updatePopuHandlingValue } = this.props;
+    updatePopuHandlingValue(updateId);
+  };
+
   componentDidMount() {
     this.getUserCreditDebitTotal();
     this.getUser7DayCreditDebitTotal();
@@ -124,6 +129,7 @@ class DashboardContent extends Component {
           <LastThreeTransactionItem
             editButtonHandler={this.editButtonHandler}
             deleteHandler={this.deleteButtonHandler}
+            updatePopuHandler={this.updatePopuHandling}
           />
           <h2 className="credit-debit-text">Debit & Credit Overview</h2>
           <TransactionOverviewCard

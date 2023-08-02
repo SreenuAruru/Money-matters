@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import { HiMiniHome } from "react-icons/hi2";
 import { FaFileInvoiceDollar } from "react-icons/fa6";
 import { FaUserAlt } from "react-icons/fa";
 
 import "./Menu.css";
-import { useState } from "react";
 
 function Menu() {
   return (
@@ -33,4 +32,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default withRouter(Menu);

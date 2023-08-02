@@ -1,15 +1,13 @@
 import { useState } from "react";
 import Cookies from "js-cookie";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 import { RxCross2 } from "react-icons/rx";
-import PopupCard from "./PopupCard/PopupCard";
+import PopupCard from "../PopupCard/PopupCard";
 
-import "./Popup.css";
+import "./UpdatePopup.css";
+import { ToastContainer, toast } from "react-toastify";
 
-const Popup = (props) => {
+const UpdatePopup = (props) => {
   const userId = Cookies.get("user_id");
   const [userTransactioFormDeatils, setUserTransactioFormDeatils] = useState({
     name: "",
@@ -30,8 +28,8 @@ const Popup = (props) => {
 
   const handlingTransactionSubmit = async (event) => {
     event.preventDefault();
-
-    //toastify here
+    const { updateIdValue } = props;
+    console.log(updateIdValue);
 
     const userData = {
       name: userTransactioFormDeatils.name,
@@ -39,10 +37,10 @@ const Popup = (props) => {
       category: userTransactioFormDeatils.category,
       amount: userTransactioFormDeatils.amount,
       date: userTransactioFormDeatils.date,
-      user_id: userId,
+      id: updateIdValue,
     };
     const url =
-      "https://bursting-gelding-24.hasura.app/api/rest/add-transaction";
+      "https://bursting-gelding-24.hasura.app/api/rest/update-transaction";
     const options = {
       method: "POST",
       body: JSON.stringify(userData),
@@ -58,7 +56,7 @@ const Popup = (props) => {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
-      toast("Trasaction Added Successfully");
+      toast("Trasaction Updated Successfully");
       setToastToggle(true);
     } catch (error) {
       console.error("Error: ", error);
@@ -70,12 +68,15 @@ const Popup = (props) => {
       {toastToggle && <ToastContainer />}
       <PopupCard>
         <div className="popup-cancel-heading-container">
-          <h2 className="popup-heading">Add Transaction</h2>
-          <button onClick={props.onPopupHandler} className="popup-cross-button">
+          <h2 className="popup-heading">Update Transaction</h2>
+          <button
+            onClick={props.onUpdatePopupHandler}
+            className="popup-cross-button"
+          >
             <RxCross2 className="popup-cross-icon" />
           </button>
         </div>
-        <p className="popup-para">Lorem ipsum dolor sit amet, consectetur</p>
+        <p className="popup-para">Now you can UPDATE all the Information</p>
 
         <form onSubmit={handlingTransactionSubmit}>
           <label className="pop-label" htmlFor="name">
@@ -157,4 +158,4 @@ const Popup = (props) => {
   );
 };
 
-export default Popup;
+export default UpdatePopup;
